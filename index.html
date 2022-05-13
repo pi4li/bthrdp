@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTH RDP Tutorials</title>
+    <link rel="stylesheet" href="https://pi4li.com/styles/build.css">
+</head>
+<body>
+  <div class='flex items-center justify-center p-3'>
+    <img class="w-1/4" src="https://assets.pi4li.com/logos/bthrdp/bthcclogo.png">
+  </div>
+    <div class="hidden rounded-lg border-2 border-gray-300 m-3 p-2" id="win">
+        <h3 class="font-bold text-center text-xl">BTH RDP FOR WINDOWS</h3>
+        <p class="mb-2"><strong>Step 1:</strong> Download BTH_EXTERNAL.RDP File</p>
+        <a href="/download" class="rounded-md bg-gray-200 p-2">Click to download</a>
+        <p class="mt-4"><strong>Step 2:</strong> Open BTH_EXTERNAL.RDP File with Remote Desktop</p>
+        <p class="mt-2"><strong>Step 3:</strong> "The publisher can't be identified" - Select "Connect Anyway"</p>
+        <p class="mt-2"><strong>Step 4:</strong> Login to the gateway with your school username and password</p>
+        <div class="pl-4">
+            <p>Username: <code>bthc\surnamef</code></p>
+            <p>Password: <code>********</code></p>
+        </div>
+        <p class="mt-2"><strong>Step 5:</strong> Login to the remote computer with your school username and password</p>
+        <div class="pl-4">
+            <p>Username: <code>bthc\surnamef</code></p>
+            <p>Password: <code>********</code></p>
+        </div>
+        <p class="mt-2"><strong>All done!</strong></p>
+        <p class="mt-2"><strong>Important Note:</strong> There will be a message saying you are on a temp. account and that your files won't be saved. This is true if you save things in Desktop/Downloads/Documents/etc. but not if you save to your H: or Public drives.</p>
+        <p class="mt-2"><strong>Not setting up for Windows?</strong> <button class="text-blue-500 no-underline hover:underline" onclick="document.getElementById('chooseoswin').classList.remove('hidden')">Click to choose an OS</button></p>
+        <p class="ml-4 hidden" id="chooseoswin"><button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('win', 'mac')">Mac</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('win', 'lin')">Linux</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('win', 'chrome')">ChromeOS</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('win', 'ios')">iOS</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('win', 'and')">Android</button></p>
+    </div>
+    <div class="hidden rounded-lg border-2 border-gray-300 m-3 p-2" id="mac">
+      <h3 class="font-bold text-center text-xl">BTH RDP FOR MAC</h3>
+      <p class="mb-2"><strong>Step 1:</strong> Install the Remote Desktop app from the App Store</p>
+      <a href="https://itunes.apple.com/app/microsoft-remote-desktop/id1295203466?mt=12" class="rounded-md bg-gray-200 p-2">View on the App Store</a>
+      <p class="mt-4 mb-2"><strong>Step 2:</strong> Download BTH_EXTERNAL.RDP File</p>
+      <a href="/download" class="rounded-md bg-gray-200 p-2">Click to download</a>
+      <p class="mt-4"><strong>Step 3:</strong> Open BTH_EXTERNAL.RDP File with Remote Desktop (Alternatively, in the menu bar, select File > Import -> Browse to the RDP file -> Select it -> Open)</p>
+      <p class="mt-2"><strong>Step 4:</strong> "The publisher can't be identified" - Select "Connect Anyway"</p>
+      <p class="mt-2"><strong>Step 5:</strong> Login to the gateway with your school username and password</p>
+      <div class="pl-4">
+          <p>Username: <code>bthc\surnamef</code></p>
+          <p>Password: <code>********</code></p>
+      </div>
+      <p class="mt-2"><strong>Step 6:</strong> Login to the remote computer with your school username and password</p>
+      <div class="pl-4">
+          <p>Username: <code>bthc\surnamef</code></p>
+          <p>Password: <code>********</code></p>
+      </div>
+      <p class="mt-2"><strong>All done!</strong></p>
+      <p class="mt-2"><strong>Important Note:</strong> There will be a message saying you are on a temp. account and that your files won't be saved. This is true if you save things in Desktop/Downloads/Documents/etc. but not if you save to your H: or Public drives.</p>
+      <p class="mt-2"><strong>Not setting up for Mac?</strong> <button class="text-blue-500 no-underline hover:underline" onclick="document.getElementById('chooseosmac').classList.remove('hidden')">Click to choose an OS</button></p>
+      <p class="ml-4 hidden" id="chooseosmac"><button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('mac', 'win')">Windows</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('mac', 'lin')">Linux</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('mac', 'chrome')">ChromeOS</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('mac', 'ios')">iOS</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('mac', 'and')">Android</button></p>
+  </div>
+    <div class="hidden rounded-lg border-2 border-gray-300 m-3 p-2" id="notknown">
+      <h3 class="font-bold text-center text-xl">BTH RDP</h3>
+      <p class="mb-2"><strong>We couldn't identify your operating system.</strong></p>
+      <p class="mt-2">Click an OS that you are setting up RDP on:</button></p>
+      <p class="ml-4"><button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('notknown', 'win')">Windows</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('notknown', 'mac')">Mac</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('notknown', 'lin')">Linux</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('notknown', 'chrome')">ChromeOS</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('notknown', 'ios')">iOS</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('notknown', 'and')">Android</button></p>
+  </div>
+
+  <div class="hidden rounded-lg border-2 border-gray-300 m-3 p-2" id="lin">
+    <h3 class="font-bold text-center text-xl">BTH RDP FOR LINUX</h3>
+    <p class="mb-2"><strong>We haven't got a full guide on Linux... yet.</strong> It's a bit difficult because Linux distros are all different and have different package managers. The best ideas are to look for an RDP package - I would recommend <a href="https://remmina.org/install" class="text-blue-500 no-underline hover:underline">Remmina</a>, so you can have a look at their install guide for some assistance.</p>
+    <p class="mt-2">Click an OS guide to read:</button></p>
+    <p class="ml-4"><button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('lin', 'win')">Windows</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('lin', 'mac')">Mac</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('lin', 'chrome')">ChromeOS</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('lin', 'ios')">iOS</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('lin', 'and')">Android</button></p>
+</div>
+
+  <div class="hidden rounded-lg border-2 border-gray-300 m-3 p-2" id="ios">
+    <h3 class="font-bold text-center text-xl">BTH RDP FOR iOS</h3>
+    <p class="mb-2"><strong>Step 1:</strong> Download the Microsoft Remote Desktop app from the App Store</p>
+    <a href="https://apps.apple.com/us/app/microsoft-remote-desktop/id1295203466" class="rounded-md bg-gray-200 p-2">Click to view on App Store</a>
+    <p class="mt-4"><strong>Step 2:</strong> Once the app is installed to your iOS device, open the Microsoft Remote Desktop app (usually called RD Client on your iPhone/iPad)</p>
+    <p class="mt-2"><strong>Step 3:</strong> The first time you load the application you should follow steps 3-7.  You should only need to run through these steps once to get setup. First, under Configuration press on the Settings button</p>
+    <p class="mt-2"><strong>Step 4:</strong> From the Settings panel, choose Gateway</p>
+    <p class="mt-2"><strong>Step 5:</strong> Now press the Add Gateway button and set the following. Then click the Save button to return to the main screen</p>
+    <div class="pl-4">
+      <p>Gateway name: <code>BTH Gateway</code></p>
+      <p>Server: <code>remoteaccess.bthcc.org.uk</code></p>
+      <p>Credentials: <code>Use credentials from connection</code></p>
+    </div>
+    <p class="mt-2"><strong>Step 6:</strong> You will be returned to the Gateway panel where you will see the gateway you have just set up, press on the Settings button in the top left and press Done button (top-right)</p>
+    <p class="mt-2"><strong>Step 7:</strong> Press New Remote Desktop and enter the following</p>
+    <div class="pl-4">
+      <p>Connection name: <code>BTH External Desktop</code></p>
+      <p>PC name: <code>bthfarm.bthc.local</code></p>
+      <p>Username: <code>bthc\surnamef</code></p>
+      <p>Password: <code>********</code></p>
+      <p>Press Gateway button and select: <code>BTH Gateway</code>
+    </div>
+    <p class="mt-2"><strong>Step 8:</strong> Under the Remote Desktops, click on BTH External Desktop</p>
+    <p class="mt-2"><strong>Step 9:</strong> Press Logon</p>
+    <p class="mt-2"><strong>Step 10:</strong> "The publisher can't be identified" - Select "Connect Anyway"</p>
+    <p class="mt-2"><strong>All done!</strong></p>
+    <p class="mt-2"><strong>Important Note:</strong> There will be a message saying you are on a temp. account and that your files won't be saved. This is true if you save things in Desktop/Downloads/Documents/etc. but not if you save to your H: or Public drives.</p>
+    <p class="mt-2"><strong>Not setting up for iOS?</strong> <button class="text-blue-500 no-underline hover:underline" onclick="document.getElementById('chooseosios').classList.remove('hidden')">Click to choose an OS</button></p>
+    <p class="ml-4 hidden" id="chooseosios"><button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('ios', 'win')">Windows</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('ios', 'mac')">Mac</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('ios', 'lin')">Linux</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('ios', 'chrome')">ChromeOS</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('ios', 'and')">Android</button></p>
+</div>
+<div class="hidden rounded-lg border-2 border-gray-300 m-3 p-2" id="and">
+  <h3 class="font-bold text-center text-xl">BTH RDP FOR ANDROID</h3>
+  <p class="mb-2"><strong>Step 1:</strong> Download the Microsoft Remote Desktop app from the Google Play Store</p>
+  <a href="https://play.google.com/store/apps/details?id=com.microsoft.rdc.androidx" class="rounded-md bg-gray-200 p-2">Click to view on Google Play Store</a>
+  <p class="mt-4"><strong>Step 2:</strong> Once the app is installed to your Android device, open the Microsoft Remote Desktop app (sometimes called RD Client)</p>
+  <p class="mt-2"><strong>Step 3:</strong> The first time you load the application you should follow steps 3-7.  You should only need to run through these steps once to get setup. First, under Configuration press on the Settings button</p>
+  <p class="mt-2"><strong>Step 4:</strong> From the Settings panel, choose Gateway</p>
+  <p class="mt-2"><strong>Step 5:</strong> Now press the Add Gateway button and set the following. Then click the Save button to return to the main screen</p>
+  <div class="pl-4">
+    <p>Gateway name: <code>BTH Gateway</code></p>
+    <p>Server: <code>remoteaccess.bthcc.org.uk</code></p>
+    <p>Credentials: <code>Use credentials from connection</code></p>
+  </div>
+  <p class="mt-2"><strong>Step 6:</strong> You will be returned to the Gateway panel where you will see the gateway you have just set up, press on the Settings button in the top left and press Done button (top-right)</p>
+  <p class="mt-2"><strong>Step 7:</strong> Press New Remote Desktop and enter the following</p>
+  <div class="pl-4">
+    <p>Connection name: <code>BTH External Desktop</code></p>
+    <p>PC name: <code>bthfarm.bthc.local</code></p>
+    <p>Username: <code>bthc\surnamef</code></p>
+    <p>Password: <code>********</code></p>
+    <p>Press Gateway button and select: <code>BTH Gateway</code>
+  </div>
+  <p class="mt-2"><strong>Step 8:</strong> Under the Remote Desktops, click on BTH External Desktop</p>
+  <p class="mt-2"><strong>Step 9:</strong> Press Logon</p>
+  <p class="mt-2"><strong>Step 10:</strong> "The publisher can't be identified" - Select "Connect Anyway"</p>
+  <p class="mt-2"><strong>All done!</strong></p>
+  <p class="mt-2"><strong>Important Note:</strong> There will be a message saying you are on a temp. account and that your files won't be saved. This is true if you save things in Desktop/Downloads/Documents/etc. but not if you save to your H: or Public drives.</p>
+  <p class="mt-2"><strong>Not setting up for Android?</strong> <button class="text-blue-500 no-underline hover:underline" onclick="document.getElementById('chooseosand').classList.remove('hidden')">Click to choose an OS</button></p>
+  <p class="ml-4 hidden" id="chooseosand"><button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('and', 'win')">Windows</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('and', 'mac')">Mac</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('and', 'lin')">Linux</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('and', 'chrome')">ChromeOS</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('and', 'ios')">iOS</button></p>
+</div>
+<div class="hidden rounded-lg border-2 border-gray-300 m-3 p-2" id="chrome">
+  <h3 class="font-bold text-center text-xl">BTH RDP FOR CHROMEOS</h3>
+  <p class="mb-2"><strong>Step 1:</strong> Download the Microsoft Remote Desktop app from the Google Play Store</p>
+  <p class="mt-2"><strong>Step 2:</strong> Once the app is installed to your Chromebook device, open the Microsoft Remote Desktop app (sometimes called RD Client)</p>
+  <p class="mt-2"><strong>Step 3:</strong> The first time you load the application you should follow steps 3-7.  You should only need to run through these steps once to get setup. First, under Configuration press on the Settings button</p>
+  <p class="mt-2"><strong>Step 4:</strong> From the Settings panel, choose Gateway</p>
+  <p class="mt-2"><strong>Step 5:</strong> Now press the Add Gateway button and set the following. Then click the Save button to return to the main screen</p>
+  <div class="pl-4">
+    <p>Gateway name: <code>BTH Gateway</code></p>
+    <p>Server: <code>remoteaccess.bthcc.org.uk</code></p>
+    <p>Credentials: <code>Use credentials from connection</code></p>
+  </div>
+  <p class="mt-2"><strong>Step 6:</strong> You will be returned to the Gateway panel where you will see the gateway you have just set up, press on the Settings button in the top left and press Done button (top-right)</p>
+  <p class="mt-2"><strong>Step 7:</strong> Press New Remote Desktop and enter the following</p>
+  <div class="pl-4">
+    <p>Connection name: <code>BTH External Desktop</code></p>
+    <p>PC name: <code>bthfarm.bthc.local</code></p>
+    <p>Username: <code>bthc\surnamef</code></p>
+    <p>Password: <code>********</code></p>
+    <p>Press Gateway button and select: <code>BTH Gateway</code>
+  </div>
+  <p class="mt-2"><strong>Step 8:</strong> Under the Remote Desktops, click on BTH External Desktop</p>
+  <p class="mt-2"><strong>Step 9:</strong> Press Logon</p>
+  <p class="mt-2"><strong>Step 10:</strong> "The publisher can't be identified" - Select "Connect Anyway"</p>
+  <p class="mt-2"><strong>All done!</strong></p>
+  <p class="mt-2"><strong>Important Note:</strong> There will be a message saying you are on a temp. account and that your files won't be saved. This is true if you save things in Desktop/Downloads/Documents/etc. but not if you save to your H: or Public drives.</p>
+  <p class="mt-2"><strong>Not setting up for ChromeOS?</strong> <button class="text-blue-500 no-underline hover:underline" onclick="document.getElementById('chooseoschrome').classList.remove('hidden')">Click to choose an OS</button></p>
+  <p class="ml-4 hidden" id="chooseoschrome"><button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('chrome', 'win')">Windows</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('chrome', 'mac')">Mac</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('chrome', 'lin')">Linux</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('chrome', 'and')">Android</button> <button class="mx-1 text-blue-500 no-underline hover:underline" onclick="showDifferentOS('chrome', 'ios')">iOS</button></p>
+</div>
+
+<span class="pl-1" id="name"></span>
+  <p class="pl-1">Website by <a href="https://pi4li.com/?ref=bthrdp" class="no-underline hover:underline transition duration-500 ease-in-out text-pi4li-orange hover:text-pi4li-orange-highlight">PI4LI</a></p>
+    <script>
+      function showDifferentOS(current, newos){
+        console.log(current != "lin")
+        if(current != "lin"){
+          document.getElementById("chooseos"+current).classList.add("hidden")
+        }
+        document.getElementById(current).classList.add("hidden")
+        document.getElementById(newos).classList.remove("hidden")
+      }
+        function getOSName(short){
+          if (short == "win") return "Windows";
+          if (short == "mac") return "Mac";
+          if (short == "lin") return "Linux";
+          if (short == "and") return "Android";
+          if (short == "ios") return "iOS";
+          if (short == "chrome") return "ChromeOS";
+        }
+        var os = "notknown";
+        if (navigator.userAgent.indexOf("Win") != -1) os = 
+          "win";
+        if (navigator.userAgent.indexOf("Mac") != -1) os = 
+          "mac";
+        if (navigator.userAgent.indexOf("Linux") != -1) os = 
+          "lin";
+        if (navigator.userAgent.indexOf("Android") != -1) os = 
+          "and";
+        if (navigator.userAgent.indexOf("like Mac") != -1) os = 
+          "ios";
+        if (navigator.userAgent.indexOf("CrOS") != -1) os = 
+          "chrome";
+          window.addEventListener('DOMContentLoaded', (event) => {
+            document.getElementById("name").innerHTML = "We detected that you are using "+getOSName(os)+" using your User-Agent request header. Suggest an OS by emailing <a href='mailto:eddie.coldrick@pi4li.com' class='text-blue-500 no-underline hover:underline'>eddie.coldrick@pi4li.com</a>.";
+              document.getElementById(os).classList.remove("hidden");
+          })
+    </script>
+</body>
+</html>
